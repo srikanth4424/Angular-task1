@@ -1,0 +1,14 @@
+<div>
+    <form [formGroup]="searchUsersForm" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Search Users" formControlName="searchUser" required>
+        <input
+            type="submit"
+            value="Search"
+            class="btn btn-dark btn-block"
+            [disabled]="!searchUsersForm.valid"
+          />
+    </form>
+    <button *ngIf="userSize > 0" class="btn btn-light btn-block" (click)="clearUser()">
+            Clear
+    </button>
+</div>

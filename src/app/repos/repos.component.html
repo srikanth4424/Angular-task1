@@ -1,0 +1,8 @@
+<div *ngFor="let repo of repos">
+    <div class="card">
+        <h3>
+            <a [attr.href]="repo.html_url">{{repo.name}}</a>
+            
+        </h3>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div>
+  <a routerLink="/" class="btn btn-light">Back to Search</a>
+  
+  <i
+    [ngClass]="
+      user && user.hireable
+        ? 'fas fa-check text-success'
+        : 'fas fa-times text-danger'
+    "
+  ></i>
+  <div class="card grid-2">
+    <div class="all-center">
+      <img
+        [attr.src]="user && user.avatar_url"
+        alt=""
+        class="round-img user-img"
+      />
+      <h1>{{ user && user.name }}</h1>
+      <p *ngIf="user && user.location">Location: {{ user.location }}</p>
+    </div>
+    <div>
+      <div *ngIf="user && user.bio">
+        <h3>Bio</h3>
+        <p>{{ user.bio }}</p>
+      </div>
+      <a [href]="user && user.html_url" class="btn btn-dark my-1"
+        >Visit Github Profile</a
+      >
+      <ul>
+        <li *ngIf="user && user.login">
+          <strong>Username:</strong> {{ user.login }}
+        </li>
+        <li *ngIf="user && user.company">
+          <strong>Company:</strong> {{ user.company }}
+        </li>
+        <li *ngIf="user && user.blog">
+          <strong>Website:</strong> {{ user.blog }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="badge badge-light">Followers: {{user && user.followers}}</div>
+    <div class="badge badge-success">Following: {{user && user.following}}</div>
+    <div class="badge badge-danger">Public Repos: {{user && user.public_repos}}</div>
+    <div class="badge badge-dark">Public Gists: {{user && user.public_gists}}</div>
+  </div>
+  <repos></repos>
+</div>
+<loader *ngIf="loading" [loading]="loading"></loader>
