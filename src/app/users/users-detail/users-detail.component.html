@@ -1,13 +1,6 @@
 <div>
   <a routerLink="/" class="btn btn-light">Back to Search</a>
   
-  <i
-    [ngClass]="
-      user && user.hireable
-        ? 'fas fa-check text-success'
-        : 'fas fa-times text-danger'
-    "
-  ></i>
   <div class="card grid-2">
     <div class="all-center">
       <img
@@ -45,6 +38,7 @@
     <div class="badge badge-danger">Public Repos: {{user && user.public_repos}}</div>
     <div class="badge badge-dark">Public Gists: {{user && user.public_gists}}</div>
   </div>
+  <h2> User Repo List</h2>
   <repos></repos>
 </div>
-<loader *ngIf="loading" [loading]="loading"></loader>
+<!-- <loader *ngIf="loading" [loading]="loading"></loader> -->
