@@ -13,11 +13,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get(`${this.apiUrl}?per_page=10`);
-    // return this.http.get(
-    //   `"https://api.github.com/users/"/users?
-    //   client_id=${environment.GITHUB_CLIENT_ID}
-    //   &client_secret=${environment.GITHUB_CLIENT_SECRET}`);
+    return this.http.get(`${this.apiUrl}?per_page=40`);
   }
 
   getUser(id): Observable<User> {

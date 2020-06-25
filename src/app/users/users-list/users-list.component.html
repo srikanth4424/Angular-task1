@@ -8,10 +8,10 @@
 <search-users (searchedUser)="onSearchUser($event)"></search-users>
 <div class="users-list-container">
     <div class="card text-center" *ngFor="let user of users">
-        <img [attr.src]="user && user.avatar_url" alt="" class="round-img users-img"/>
-        <h3>{{user && user.login}}</h3>
-        <div>
-            <a [routerLink]="['/user', user && user.login]" class="btn btn-dark btn-sm my-1">Check details</a>
-        </div>
+        <img [attr.src]="user.avatar_url" alt="" class="round-img users-img"/>
+        <h2>{{ user.login }}</h2>
+        
+            <a [routerLink]="['/user', user.login]" class="btn btn-default btn-sm my-1">Check details</a>
+        
     </div>
 </div>
