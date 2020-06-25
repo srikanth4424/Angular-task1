@@ -1,7 +1,6 @@
 <div>
 <nav class="navbar bg-primary">
     <h1>
-        <!-- <i [class]="navbar.icon"></i> -->
         GitHub Users List
     </h1>   
 </nav>
@@ -12,8 +11,7 @@
         <img [attr.src]="user && user.avatar_url" alt="" class="round-img users-img"/>
         <h3>{{user && user.login}}</h3>
         <div>
-            <a [routerLink]="['/user', user && user.login]" class="btn btn-dark btn-sm my-1">More</a>
+            <a [routerLink]="['/user', user && user.login]" class="btn btn-dark btn-sm my-1">Check details</a>
         </div>
     </div>
 </div>
-<!-- <loader *ngIf="loading" [loading]="loading"></loader> -->
